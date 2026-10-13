@@ -5,6 +5,12 @@ public class Student {
     private char letterGrade;
     private double average;
 
+    private static int aCount=0;
+    private static int bCount=0;
+    private static int cCount=0;
+    private static int dCount=0;
+    private static int fCount=0;
+
     public Student (String id ,String name,int grade){
         this.id=id;
         this.name=name;
@@ -37,22 +43,27 @@ public class Student {
     {
         return grade;
     }
-     public void setLetterGrade()
+     public void setLetterGrade(int grade)
     {
         if (grade >= 90){
             letterGrade= 'A';
+            aCount++;
         }
         else if (grade >= 80){
             letterGrade= 'B';
+            bCount ++;
         }
         else if (grade >=70){
             letterGrade= 'C';
+            cCount++;
         }
         else if (grade >= 60){
             letterGrade= 'D';
+            dCount++;
         }
         else{
             letterGrade= 'F';
+            fCount++;
         }
     }
     public char getLetterGrade()
@@ -66,6 +77,34 @@ public class Student {
     public double getAverage ()
     {
         return average;
+    }
+
+    public void setGradeCounter(char letterGrade)
+    {
+        if (letterGrade=='A'){
+            aCount++;
+        }
+        else if (letterGrade=='B'){
+            bCount++;
+        }
+        else if (letterGrade=='C'){
+            cCount++;
+        }
+        else if (letterGrade=='D'){
+            dCount++;
+        }
+        else {
+            fCount++;
+        }
+    }
+
+    public static void getGradeCounter()
+    {
+        System.out.println("A:"+aCount);
+        System.out.println("B:"+bCount);
+        System.out.println("C:"+cCount);
+        System.out.println("D:"+dCount);
+        System.out.println("F:"+fCount);
     }
 
     public void display ()
