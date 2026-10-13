@@ -5,11 +5,7 @@ public class StudentApp {
         Scanner input=new Scanner(System.in);
         int total=0;
         int gradeCounter=0;
-        int aCount=0;
-        int bCount=0;
-        int cCount=0;
-        int dCount=0;
-        int fCount=0;
+
         System.out.println("How many Students do you want to enter: ");
         int numOfStudent = input.nextInt();
         input.nextLine();
@@ -22,33 +18,14 @@ public class StudentApp {
        System.out.println("Enter Student grade: ");
        int grade=input.nextInt(); 
        input.nextLine();
+
      Student s1=new Student(id,name,grade);
      s1.display();
+
     total=total+s1.getGrade();
-
-    if (s1.getLetterGrade()=='A')
-      {
-        aCount++;
-      }            
-    else if (s1.getLetterGrade()=='B')
-      {
-        bCount++;
-      }     
-    else if (s1.getLetterGrade()=='C')
-      {
-        cCount++;
-      }     
-    else if (s1.getLetterGrade()=='D')
-      {
-        dCount++;
-      }  
-    else 
-      {
-        fCount++;
-      }    
       gradeCounter++;      
-
     }
+    
     if (gradeCounter!=0)
     {
      double average=(double)total/gradeCounter;
